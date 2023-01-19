@@ -10,76 +10,111 @@
 		<!-- external CSS link -->
 		<link rel="stylesheet" href="css/normalize.css" />
 		<link rel="stylesheet" href="css/style.css" />
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/daisyui@2.47.0/dist/full.css"
+			rel="stylesheet"
+			type="text/css"
+		/>
+		<script src="https://cdn.tailwindcss.com"></script>
 	</head>
-	<body>
-		<h1>Deep Dish Brownies</h1>
-		<h4>Recipe by: Biz McMahon</h4>
+	<body class="bg-white">
+		<!-- <h1>Deep Dish Brownies</h1>
+		
+		<div class="card w-96 glass">
+			<figure>
+				<img src="https://placeimg.com/400/225/arch" alt="car!" />
+			</figure>
+			<div class="card-body">
+				<h1 class="card-title">Deep Dish Brownies</h1>
+					<h4>Recipe by: Biz McMahon</h4>
 
-		<h2>Related Recipes</h2>
 
-		<ul>
-			<li><a href="#">Brownies</a></li>
-			<li><a href="#"> Can't Tell They're Low-fat Brownies </a></li>
-			<li><a href="#">Bodacious Brownies </a></li>
-			<li><a href="#">Katrina's Best-Ever Chocolate Brownies</a></li>
-			<li><a href="#">Easy Fudge Brownies </a></li>
 
-		</ul>
-		<h2>Preperation Time</h2>
-		<span>60 mins</span>
-		<h3>Servings</h3>
-		<span> 9 </span>
-		<h2>Ingredients</h2>
 
-		<ul>
-			<li>3/4 cup butter, melted</li>
-			<li>1 1/2 cups white sugar</li>
-			<li>1 1/2 teaspoons vanilla extract</li>
-			<li>3 eggs</li>
-			<li>3/4 cup all-purpose flour</li>
-			<li>1/2 cup unsweetened cocoa powder</li>
-			<li>1/2 teaspoon baking powder</li>
-			<li>1/2 teaspoon salt</li>
-		</ul>
+				<div class="card-actions justify-end">
+					<button class="btn btn-primary">Learn now!</button>
+				</div>
+			</div>
+		</div> -->
+		<h1 class="text-6xl flex justify-center">Recipe</h1>
+		<div class="flex justify-center">
+			<div class="card w-96 bg-base-100 shadow-x">
+				<figure>
+					<img src="https://placeimg.com/400/225/arch" alt="Shoes" />
+				</figure>
+				<div class="card-body">
+					<h1 class="card-title text-2xl">
+						Deep Dish Brownies
+						<div class="badge badge-secondary">Popular</div>
+					</h1>
+					<h2 class="underline-offset-1">Preperation Time: 60 min</h2>
 
-		<h2>Directions</h2>
+					<h2 class=" underline underline-offset-1">Ingredients</h2>
+					<div class="card-actions justify-center">
+						<div class="badge badge-outline">3/4 c. butter</div>
+						<div class="badge badge-outline">1 1/2 c. white sugar</div>
+						<div class="badge badge-outline">1 1/2 tsp. vanilla extract</div>
+						<div class="badge badge-outline">3 eggs</div>
+						<div class="badge badge-outline">3/4 c. all-purpose flour</div>
+						<div class="badge badge-outline">1/2 tsp. salt</div>
+						<div class="badge badge-outline">1/2 tsp baking powder</div>
+						<div class="badge badge-outline">1/2 c. unsweet cocoa powder</div>
+					</div>
+					<h2 class=" underline underline-offset-1" >Directions</h2>
 
-		<ol>
-			<li>
-				Preheat oven to 350 degrees F (175 degrees C) and Grease an 8 inch
-				square pan.
-			</li>
-			<li>In a large bowl, blend melted butter, sugar and vanilla.</li>
-			<li>Beat in eggs one at a time.</li>
-			<li>
-				Combine the flour, cocoa, baking powder and salt. Gradually blend into
-				the egg mixture.
-			</li>
-			<li>Spread the batter into the prepared pan.</li>
-			<li>
-				Bake in preheated oven for 40 to 45 minutes, or until brownies begin to
-				pull away from the sides of the pan.
-			</li>
+					<ol class="list-decimal">
+						<li>
+							Preheat oven to 350 degrees F (175 degrees C) and Grease an 8 inch
+							square pan.
+						</li>
+						<li>In a large bowl, blend melted butter, sugar and vanilla.</li>
+						<li>Beat in eggs one at a time.</li>
+						<li>
+							Combine the flour, cocoa, baking powder and salt. Gradually blend
+							into the egg mixture.
+						</li>
+						<li>Spread the batter into the prepared pan.</li>
+						<li>
+							Bake in preheated oven for 40 to 45 minutes, or until brownies
+							begin to pull away from the sides of the pan.
+						</li>
 
-			<li>Let brownies cool, then cut into squares. Enjoy!</li>
-		</ol>
+						<li>Let brownies cool, then cut into squares. Enjoy!</li>
+					</ol>
 
-		<h3>Tip</h3>
+					<h3 class="underline underline-offset-1">Tip</h3>
 
-		<p>
-			Aluminum foil can be used to keep food moist, cook it evenly, and make
-			clean-up easier.
-		</p>
+					<p class="italic">
+						Aluminum foil can be used to keep food moist, cook it evenly, and
+						make clean-up easier.
+					</p>
 
-		<h6>Nutritional Info</h6>
+					<h6 class="underline-offset-1">Nutritional Info</h6>
 
-		<span>340 cals</span>
+					<span>340 cals</span>
 
-		<p>
-			Find this recipe
-			<a href="http://allrecipes.com/recipe/11063/deep-dish-brownies">here</a>
-		</p>
+					<p>
+						Find this recipe
+						<a href="http://allrecipes.com/recipe/11063/deep-dish-brownies"
+							>here</a
+						>
+					</p>
+					<h2 class="underline underline-offset-1">Related Recipes</h2>
+					
+							<ul class="list-disc">
+								<li><a href="#">Brownies</a></li>
+								<li><a href="#"> Can't Tell They're Low-fat Brownies </a></li>
+								<li><a href="#">Bodacious Brownies </a></li>
+								<li><a href="#">Katrina's Best-Ever Chocolate Brownies</a></li>
+								<li><a href="#">Easy Fudge Brownies </a></li>
+							</ul>
+				</div>
+			</div>
+		</div>
 
-		<script type="text/javascript" src="js/main.js"></script>
+	
+		
+	 	<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
