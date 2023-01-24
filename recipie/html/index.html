@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="description" content="Your description goes here" />
@@ -8,6 +8,7 @@
 		<title>Recipe</title>
 
 		<!-- external CSS link -->
+
 		<link rel="stylesheet" href="css/normalize.css" />
 		<link rel="stylesheet" href="css/style.css" />
 
@@ -18,8 +19,14 @@
 		/>
 		<script src="https://cdn.tailwindcss.com"></script>
 	</head>
-	<body class="bg-white">
-		<h1 class="text-6xl flex justify-center pb-7">Recipe</h1>
+	<body>
+		<div class="navbar bg-base-100 flex justify-center vertical-align p-10">
+			<a class="btn btn-ghost normal-case text-6xl font-mono">Recipe</a>
+			<div class="tooltip" data-tip="hello">
+				<button class="btn theme-btn">Change Theme</button>
+			</div>
+		</div>
+
 		<div class="flex justify-center">
 			<div class="card w-96 bg-base-100 shadow-x">
 				<figure>
@@ -29,7 +36,7 @@
 					/>
 				</figure>
 				<div class="card-body bg-gray-300">
-					<h1 class="card-title text-2xl">
+					<h1 class="card-title text-xl font-mono">
 						Deep Dish Brownies
 						<div class="badge badge-secondary">Popular</div>
 					</h1>
