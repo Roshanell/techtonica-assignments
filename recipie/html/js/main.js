@@ -9,10 +9,16 @@
 
 let themeChangerButton = document.querySelector(".theme-btn");
 themeChangerButton.addEventListener("click", toLightMode);
+const card = document.querySelector("#card");
 
 function toLightMode() {
 	alert("Clicked!");
 	themeChangerButton.innerText = "Changed to Light Mode";
-	const card = document.querySelector("#card");
-	card.dataset.theme = "light";
+	 card.dataset.theme = "light"
+// create a toggle button between light and dark mode
+
 }
+
+// change height to 40 when hoverin over 
+
+
