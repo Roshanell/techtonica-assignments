@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" id="card">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="Your description goes here" />
+		<meta name="keywords" content="one, two, three" />
+
+		<title>Recipe</title>
+
+		<!-- external CSS link -->
+
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/style.css" />
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/daisyui@2.47.0/dist/full.css"
+			rel="stylesheet"
+			type="text/css"
+		/>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body>
+		<div
+			class="navbar bg-base-100 flex justify-center vertical-align p-10 flex-col"
+		>
+			<a class="btn btn-ghost normal-case text-6xl font-mono">Recipe</a>
+			<div class="tooltip" data-tip="hello">
+				<button class="btn theme-btn m-10">Change Theme</button>
+			</div>
+		</div>
+
+		
+		<div class="flex justify-center">
+			<div class="card w-96 md:w-32 lg:w-96 bg-base-100 shadow-x">
+				<figure>
+					<img
+						src="https://glutenfreecuppatea.co.uk/wp-content/uploads/2020/06/gluten-free-chocolate-brownies-recipe-featured-1.jpg"
+						alt="brownies"
+					/>
+				</figure>
+				<div class="card-body bg-gray-300">
+					<h1 class="card-title text-xl font-mono">
+						Deep Dish Brownies
+						<div
+							class="badge badge-secondary"
+							onmouseover="bigBadge(this)"
+							onmouseout="normalBadge(this)"
+						>
+							Popular
+						</div>
+					</h1>
+					<p>These are the GOAT of all brownies</p>
+					<h2 class="underline-offset-1">Preperation Time: 60 min</h2>
+
+					<h2 class="underline underline-offset-1">Ingredients</h2>
+					<div class="card-actions justify-center">
+						<div class="badge badge-outline bg-yellow-300">3/4 c. butter</div>
+						<div class="badge badge-outline bg-yellow-300">
+							1 1/2 c. white sugar
+						</div>
+						<div class="badge badge-outline bg-yellow-300">
+							1 1/2 tsp. vanilla extract
+						</div>
+						<div class="badge badge-outline bg-yellow-300">3 eggs</div>
+						<div class="badge badge-outline bg-yellow-300">
+							3/4 c. all-purpose flour
+						</div>
+						<div class="badge badge-outline bg-yellow-300">1/2 tsp. salt</div>
+						<div class="badge badge-outline bg-yellow-300">
+							1/2 tsp baking powder
+						</div>
+						<div class="badge badge-outline bg-yellow-300">
+							1/2 c. unsweet cocoa powder
+						</div>
+					</div>
+					<div>
+						<h2 class="underline underline-offset-1">Directions</h2>
+
+						<ol class="list-decimal">
+							<li>
+								Preheat oven to 350 degrees F (175 degrees C) and Grease an 8
+								inch square pan.
+							</li>
+							<li>In a large bowl, blend melted butter, sugar and vanilla.</li>
+							<li>Beat in eggs one at a time.</li>
+							<li>
+								Combine the flour, cocoa, baking powder and salt. Gradually
+								blend into the egg mixture.
+							</li>
+							<li>Spread the batter into the prepared pan.</li>
+							<li>
+								Bake in preheated oven for 40 to 45 minutes, or until brownies
+								begin to pull away from the sides of the pan.
+							</li>
+
+							<li>Let brownies cool, then cut into squares. Enjoy!</li>
+						</ol> 
+					</div>
+
+					<h3 class="underline underline-offset-1">Tip</h3>
+
+					<p class="italic">
+						Aluminum foil can be used to keep food moist, cook it evenly, and
+						make clean-up easier.
+					</p>
+
+					<h6 class="underline underline-offset-1">Nutritional Info</h6>
+
+					<span class="font-bold">340 cals</span>
+
+					<p>
+						Find this recipe
+						<a
+							class="hover:text-blue-300"
+							href="http://allrecipes.com/recipe/11063/deep-dish-brownies"
+							>here</a
+						>
+					</p>
+					<div>
+						<h2 class="underline underline-offset-1">Related Recipes</h2>
+
+						<ul class="list-disc">
+							<li>
+								<a
+									class="hover:text-blue-300"
+									href="https://www.loveandlemons.com/brownies-recipe/"
+									>Brownies</a
+								>
+							</li>
+							<li>
+								<a
+									class="hover:text-blue-300"
+									href="https://www.flyers-on-line.com/recipes/can-t-tell-they-re-low-fat-brownies-459"
+								>
+									Can't Tell They're Low-fat Brownies
+								</a>
+							</li>
+							<li>
+								<a
+									class="hover:text-blue-300"
+									href="https://www.allrecipes.com/recipe/10853/bodacious-brownies/"
+									>Bodacious Brownies
+								</a>
+							</li>
+							<li>
+								<a
+									class="hover:text-blue-300"
+									href="https://cookthismeal.com/recipe/17840-katrinas-best-ever-chocolate-brownies"
+									>Katrina's Best-Ever Chocolate Brownies</a
+								>
+							</li>
+							<li>
+								<a
+									class="hover:text-blue-300"
+									href="https://www.inspiredtaste.net/24412/cocoa-brownies-recipe/"
+									>Easy Fudge Brownies
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>
