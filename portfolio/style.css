@@ -1,0 +1,59 @@
+/* Box Model Hack */
+* {
+	-moz-box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+	width: 100%;
+}
+
+.containers {
+	border: 2px orange solid;
+}
+.fa-brands {
+	width: 19.69px;
+	height: 19.2px;
+}
+
+.mask {
+	background: rgb(36, 36, 36);
+	background: linear-gradient(
+		90deg,
+		rgba(36, 36, 36, 0.22454919467787116) 0%,
+		rgba(36, 36, 36, 0) 100%,
+		rgba(36, 36, 36, 1) 100%
+	);
+}
+
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+}
+
+footer {
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
