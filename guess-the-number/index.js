@@ -16,3 +16,8 @@ function getNewRandomNumber() {
 		return Math.floor(Math.random() * 15);
 	}
 }
+
+const submitButton = document.querySelector("#submitButton");
+const easyButton = document.querySelector("#levelOne");
+const mediumButton = document.querySelector("#levelTwo");
+const hardButton = document.querySelector("#levelThree");
