@@ -9,11 +9,11 @@ console.log(randomNumber, "new num");
 function getNewRandomNumber() {
 	if (mode === "easy") {
 		console.log(mode);
-		return Math.floor(Math.random() * 5);
+		return Math.floor(Math.random() * 5 + 1);
 	} else if (mode === "medium") {
-		return Math.floor(Math.random() * 10);
+		return Math.floor(Math.random() * 10 + 1);
 	} else {
-		return Math.floor(Math.random() * 15);
+		return Math.floor(Math.random() * 15 + 1);
 	}
 }
 
