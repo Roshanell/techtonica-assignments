@@ -126,3 +126,25 @@ function hardLevel() {
 
 	console.log(randomNumber);
 }
+
+
+// For each guess, the game should display whether the answer is higher, lower, or correct.
+// Hint
+
+let hint = document.querySelector("#hintArea");
+let hintButton = document.querySelector("#hintButton");
+
+hintButton.addEventListener("click", toggleView);
+
+function toggleView() {
+  // console.log("event added for hint");
+  if (newValue > randomNumber) {
+    hint.innerHTML = "you are over";
+  } else if (newValue < randomNumber) {
+    hint.innerHTML = "you are under";
+  } else {
+    hint.innerHTML = "";
+  }
+}
+
+// hintArea.style.display = "block";
