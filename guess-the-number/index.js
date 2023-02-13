@@ -21,3 +21,8 @@ const submitButton = document.querySelector("#submitButton");
 const easyButton = document.querySelector("#levelOne");
 const mediumButton = document.querySelector("#levelTwo");
 const hardButton = document.querySelector("#levelThree");
+
+submitButton.addEventListener("click", submitAnswer);
+easyButton.addEventListener("click", easyLevel);
+mediumButton.addEventListener("click", mediumLevel);
+hardButton.addEventListener("click", hardLevel);
