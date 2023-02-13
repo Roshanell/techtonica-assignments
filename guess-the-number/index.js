@@ -34,3 +34,13 @@ const humanScoreArea = document.getElementById("humanScoreArea");
 const computerScoreArea = document.getElementById("computerScoreArea");
 humanScoreArea.innerHTML = humanScore;
 computerScoreArea.innerHTML = computerScore;
+
+// result functionality
+let guessTotalArea = document.getElementById("guessTotalArea");
+
+// game mode area
+const gameModeArea = document.querySelector("#gameModeArea");
+gameModeArea.innerHTML = mode;
+
+// get a new random number
+let userPreviousGuesses = [];
