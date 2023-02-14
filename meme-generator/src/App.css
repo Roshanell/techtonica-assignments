@@ -35,3 +35,51 @@ header {
 	height: 100px;
 	padding-right: 1rem;
 }
+
+/** form section **/
+
+.wordInputSection {
+	width: 45rem;
+	height: 2.5rem;
+	left: 36px;
+	top: 101px;
+	border: #e5e5e5 2px solid;
+	border-radius: 5px;
+	color: #0d0d0d;
+	margin-top: 3rem;
+}
+
+.inputArea {
+	display: flex;
+	justify-content: center;
+}
+
+.rightInputSection {
+	margin-left: 2rem;
+}
+
+button {
+	background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
+	border-radius: 5px;
+	width: 477px;
+	height: 40px;
+	color: white;
+	height: 3rem;
+	font-family: Karla;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 19px;
+	letter-spacing: 0.015em;
+	text-align: center;
+}
+
+.buttonContainer {
+	display: flex;
+	justify-content: center;
+	padding-top: 3rem;
+}
+
+.imageIcon{
+	height:1rem;
+	padding-right: 1rem;
+}
