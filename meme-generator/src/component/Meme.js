@@ -1,19 +1,22 @@
+import { useState } from "react";
 import memesData from "./memesData";
 
 function Meme() {
+	// declare state of the  memeImage to empty string
+	const [memeImage, setMemeImage] = useState("");
+
 	function getRandomImage() {
 		console.log("clicked");
 		//generate a random number (x)
 		const memesArr = memesData.data.memes;
 		let randomNum = [Math.floor(Math.random() * memesArr.length) + 1];
 		console.log(randomNum);
-		//after clicked use that number to grab the x image out of the arr
-        //obj with url
-        let url = memesArr[randomNum].url
-        console.log(url)
-		// create an image section
+		// generate a random url
+		const randomUrl = memesArr[randomNum].url;
+		console.log(randomUrl);
 
-		// disply it in the image section
+		// update memeImage
+		setMemeImage(randomUrl);
 	}
 	return (
 		<div>
@@ -30,6 +33,9 @@ function Meme() {
 						<img src="https://i.imgur.com/x5xcJNa.png" className="imageIcon" />
 						Generate a new meme image{" "}
 					</button>
+				</div>
+				<div>
+					<img src={memeImage} />
 				</div>
 			</main>
 		</div>
