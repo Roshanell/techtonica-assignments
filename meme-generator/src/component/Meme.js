@@ -3,12 +3,20 @@ import memesData from "./memesData";
 
 function Meme() {
 	// declare state of the  memeImage to empty string
-	const [memeImage, setMemeImage] = useState("");
+	// const [memeImage, setMemeImage] = useState("");
+
+	const [meme, setMeme] = useState({
+		topText: "",
+		bottomText: "",
+		randomImage: "http://i.imgflip.com/1bij.jpg",
+	});
+
+	const [allMemeImages, setAllMemeImages] = useState(memesData);
 
 	function getRandomImage() {
 		console.log("clicked");
 		//generate a random number (x)
-		const memesArr = memesData.data.memes;
+		const memesArr = allMemeImages.data.memes;
 		let randomNum = [Math.floor(Math.random() * memesArr.length) + 1];
 		console.log(randomNum);
 		// generate a random url
@@ -16,7 +24,10 @@ function Meme() {
 		console.log(randomUrl);
 
 		// update memeImage
-		setMemeImage(randomUrl);
+		setMeme(prevMeme =>({
+            ...prevMeme,
+            randomImage:randomUrl
+        }));
 	}
 	return (
 		<div>
@@ -34,10 +45,13 @@ function Meme() {
 						Generate a new meme image{" "}
 					</button>
 				</div>
-				<div>
+				{/* <div>
 					<img src={memeImage} />
-				</div>
+				</div> */}
 			</main>
+			<div className="memeArea">
+				<img src={meme.randomImage} className="imageOfMeme" />
+			</div>
 		</div>
 	);
 }
