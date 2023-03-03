@@ -17,8 +17,11 @@ app.get('/', (req, res) => {
 // creates an endpoint for the route /api/weather
 app.get('/api/weather', (req, res) => {
   res.json(dataWeather);
+
 });
 
+
+  // const url = `https://api.openweathermap.org/data/2.5/weather?${params}`;
 // console.log that your server is up and running
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
