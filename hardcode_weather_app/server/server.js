@@ -19,15 +19,15 @@ app.get("/api/weather/", (req, res) => {
 	const city = req.query.cityName;
 	//console.log(city);
 	const apiKey = process.env.API_KEY;
-	console.log(apiKey)
+	console.log(apiKey);
 	const params = new URLSearchParams({
 		q: city,
 		appid: apiKey,
 		units: "Metric",
 	});
-	const url = `https://api.openweathermap.org/data/2.5/weather?${params}`;
-	//const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY}`
-	//console.log(url);
+	//const url = `https://api.openweathermap.org/data/2.5/weather?${params}`;
+	const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+	console.log(url);
 	fetch(url)
 		.then((res) => res.json())
 		.then((data) => {
