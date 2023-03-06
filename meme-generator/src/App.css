@@ -1,0 +1,102 @@
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 2rem;
+	background: linear-gradient(
+		90deg,
+		#672280 1.18%,
+		#672280 1.19%,
+		#8224a3 43.39%,
+		#8524a6 47.5%,
+		#a626d3 100%
+	);
+	color: white;
+	font-family: Inter;
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 15px;
+	letter-spacing: 0em;
+	text-align: right;
+}
+
+.headerImageDiv {
+	display: flex;
+	align-items: center;
+	font-size: 21px;
+	font-weight: 700;
+	line-height: 24px;
+	letter-spacing: -0.1em;
+	text-align: left;
+}
+
+.trollFace {
+	width: auto;
+	height: 100px;
+	padding-right: 1rem;
+}
+
+/** form section **/
+
+.wordInputSection {
+	width: 45rem;
+	height: 2.5rem;
+	left: 36px;
+	top: 101px;
+	border: #e5e5e5 2px solid;
+	border-radius: 5px;
+	color: #0d0d0d;
+	margin-top: 3rem;
+}
+
+.inputArea {
+	display: flex;
+	justify-content: center;
+}
+
+.rightInputSection {
+	margin-left: 2rem;
+}
+
+button {
+	background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
+	border-radius: 5px;
+	width: 477px;
+	height: 40px;
+	color: white;
+	height: 3rem;
+	font-family: Karla;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 19px;
+	letter-spacing: 0.015em;
+	text-align: center;
+}
+
+.buttonContainer {
+	display: flex;
+	justify-content: center;
+	padding-top: 3rem;
+}
+
+.imageIcon {
+	height: 1rem;
+	padding-right: 1rem;
+}
+
+/* meme area */
+
+.memeArea {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: solid 1px black;
+	/* height: 25rem;
+	margin: auto; */
+	/* width: 90%; */
+	margin-top: 3%; 
+}
+
+.imageOfMeme{
+	max-width: 100%;
+}
