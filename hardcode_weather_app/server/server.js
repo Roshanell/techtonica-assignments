@@ -23,10 +23,10 @@ app.get("/api/weather/", (req, res) => {
 	const params = new URLSearchParams({
 		q: city,
 		appid: apiKey,
-		units: "Metric",
+		units: "",
 	});
-	//const url = `https://api.openweathermap.org/data/2.5/weather?${params}`;
-	const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+	const url = `https://api.openweathermap.org/data/2.5/weather?${params}`;
+	//const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
 	console.log(url);
 	fetch(url)
 		.then((res) => res.json())
