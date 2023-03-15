@@ -52,6 +52,21 @@ app.get("/api/events", async (req, res) => {
 			return res.status(400).json({ error });
 		}
 	});
+	app.delete("/api/events/:eventId", async (req, res) => {
+		try {
+			const result = await db.query(
+				`DELETE FROM events WHERE id=${req.params.eventId}`
+			);
+			if (result.rowCount === 0) {
+				res
+					.status(404)
+					.json({ success: false, message: `${req.params.eventId} not found` });
+			}
+			res.send({ sucesss: true, message: `${req.params.eventId} deleted` });
+		} catch (err) {
+			console.log(err.message);
+		}
+	});
 
 	//hardcode the events response for testing reasons. This call has one more event that the real DB
 	// const events = [

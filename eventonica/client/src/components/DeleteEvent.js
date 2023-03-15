@@ -18,6 +18,4 @@ const DeleteEvent = ({ deleteFromDB, eventId }) => {
 
 export default DeleteEvent;
 
-// createa button
-// generate an id for each button or somehow get the button id from the parent events
-//
+

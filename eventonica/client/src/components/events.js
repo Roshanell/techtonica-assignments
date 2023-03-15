@@ -14,11 +14,27 @@ const Events = () => {
 				console.log("Events fetched...", events);
 			});
 	}, []);
-	function deleteFromDB(eventId) {
-		// will modify events arr
-		// user clicks the delete button
+	// function deleteFromDB(eventId) {
+	// 	// will modify events arr
+	// 	// user clicks the delete button
+	// 	console.log(eventId);
+
+	// }
+
+	const deleteFromDB = async (eventId) => {
 		console.log(eventId);
-	}
+		try {
+			const deleteFromDB = await fetch(
+				`http://localhost:8080/api/events/${eventId}`,
+
+				{ method: "DELETE" }
+			);
+			const updatedEvents = events.filter((event) => event.id != eventId);
+			setEvents(updatedEvents);
+		} catch (err) {
+			console.log(err.message);
+		}
+	};
 	// data that will be passed to the child
 	// look into heirarchy for data passing
 	const postRequest = (newEvent) => {
