@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 
 //     {id: 1, title: 'Women in Tech Techtonica Panel', location: 'Overland Park Convention Center'},
 
-const AddEvent = () => {
+const AddEvent = (props) => {
 	// create a state for the new event that holds an empty object
 	const [event, setEvent] = useState({
 		title: "",
@@ -45,7 +45,7 @@ const AddEvent = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setEvent(event);
-		console.log(event);
+		props.postRequest(event);
 	};
 	return (
 		<Form onSubmit={handleSubmit}>

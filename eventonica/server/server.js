@@ -31,9 +31,11 @@ app.get("/api/events", async (req, res) => {
 		return res.status(400).json({ error });
 	}
 
-	// app.post("/api/createEvent", async (req, res) => {
-	// 	res.send('Got a POST request')
-	// });
+	app.post("/api/events", async (req, res) => {
+		// todo at the end save this event to db
+		console.log("from the server, post req", req.body);
+		res.send(req.body);
+	});
 
 	//hardcode the events response for testing reasons. This call has one more event that the real DB
 	// const events = [
