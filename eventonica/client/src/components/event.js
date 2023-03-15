@@ -5,7 +5,7 @@ import { useState } from "react";
 const EventCard = (props) => {
 	const [isFavorite, setIsFavorite] = useState(true);
 	const handleFavoriteClick = () => {
-		console.log("click");
+		console.log({ isFavorite });
 		setIsFavorite((prevVal) => !prevVal);
 	};
 	const favorite = <i className="fa-solid fa-heart"> </i>;
