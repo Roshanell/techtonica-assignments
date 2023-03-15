@@ -14,7 +14,8 @@ const Events = () => {
 				console.log("Events fetched...", events);
 			});
 	}, []);
-
+	// data that will be passed to the child
+	// look into heirarchy for data passing
 	const postRequest = (newEvent) => {
 		//console.log("From the parent", newEvent);
 		return fetch("http://localhost:8080/api/events", {
@@ -42,6 +43,7 @@ const Events = () => {
 					/>
 				))}
 			</CardGroup>
+			{/* getting this data from post req to add event comp - parent to child */}
 			<AddEvent postRequest={postRequest} />
 		</div>
 	);

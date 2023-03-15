@@ -5,7 +5,7 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 
 //     {id: 1, title: 'Women in Tech Techtonica Panel', location: 'Overland Park Convention Center'},
-
+// props from the parent
 const AddEvent = (props) => {
 	// create a state for the new event that holds an empty object
 	const [event, setEvent] = useState({
@@ -45,7 +45,10 @@ const AddEvent = (props) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setEvent(event);
+		//getting this info from the parent;
+		//event callback the data
 		props.postRequest(event);
+		// setEvent("");
 	};
 	return (
 		<Form onSubmit={handleSubmit}>

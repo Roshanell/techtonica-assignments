@@ -3,11 +3,11 @@ import Moment from "react-moment";
 import { useState } from "react";
 
 const EventCard = (props) => {
-	const [isFavorite, setIsFavorite] = useState(true);
+	const [isFavorite, setIsFavorite] = useState(false);
 	const handleFavoriteClick = () => {
-		console.log({ isFavorite });
 		setIsFavorite((prevVal) => !prevVal);
 	};
+	console.log({ isFavorite });
 	const favorite = <i className="fa-solid fa-heart"> </i>;
 	const isNotFavorite = <i className="fa-regular fa-heart"></i>;
 	return (
