@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import EventCard from "./event";
 import CardGroup from "react-bootstrap/CardGroup";
 import AddEvent from "./AddEvent";
+import DeleteEvent from "./DeleteEvent";
 
 const Events = () => {
 	const [events, setEvents] = useState([]);
-
 	useEffect(() => {
 		fetch("http://localhost:8080/api/events")
 			.then((response) => response.json())
@@ -14,6 +14,11 @@ const Events = () => {
 				console.log("Events fetched...", events);
 			});
 	}, []);
+	function deleteFromDB(eventId) {
+		// will modify events arr
+		// user clicks the delete button
+		console.log(eventId);
+	}
 	// data that will be passed to the child
 	// look into heirarchy for data passing
 	const postRequest = (newEvent) => {
@@ -31,6 +36,11 @@ const Events = () => {
 				setEvents((events) => [...events, data]);
 			});
 	};
+
+	const deleteRequest = () => {
+		console.log(`deleted from parent`);
+	};
+
 	return (
 		<div>
 			<CardGroup className="Events">
@@ -40,9 +50,13 @@ const Events = () => {
 						title={event.title}
 						location={event.location}
 						time={event.eventtime}
+						deleteFromDB={deleteFromDB}
+						eventId={event.id}
 					/>
+					//  <DeleteEvent />
 				))}
 			</CardGroup>
+
 			{/* getting this data from post req to add event comp - parent to child */}
 			<AddEvent postRequest={postRequest} />
 		</div>

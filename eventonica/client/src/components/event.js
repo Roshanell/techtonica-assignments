@@ -2,7 +2,7 @@ import Card from "react-bootstrap/Card";
 import Moment from "react-moment";
 import { useState } from "react";
 import DeleteEvent from "./DeleteEvent";
-const EventCard = (props) => {
+const EventCard = (props,) => {
 	const [isFavorite, setIsFavorite] = useState(false);
 	const handleFavoriteClick = () => {
 		setIsFavorite((prevVal) => !prevVal);
@@ -33,7 +33,7 @@ const EventCard = (props) => {
 					)}
 				</Card.Subtitle>
 				<Card.Text>{props.location}</Card.Text>
-					<DeleteEvent />
+				 <DeleteEvent deleteFromDB={props.deleteFromDB} eventId={props.eventId} /> 
 			</Card.Body>
 		</Card>
 	);
