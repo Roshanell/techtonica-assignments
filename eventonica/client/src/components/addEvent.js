@@ -116,15 +116,15 @@ const AddEvent = (props) => {
 					<Form.Control placeholder="Enter Event Owner" />
 				</Form.Group> */}
 
-				{/* <Form.Group as={Col} controlId="formGridState">
+				<Form.Group as={Col} controlId="formGridState">
 					<Form.Label>Status</Form.Label>
 					<Form.Select defaultValue="Choose...">
 						<option>Choose...</option>
-						<option>In progress</option>
-						<option>Done</option>
-						<option>To Do</option>
+						<option>Interested</option>
+						<option>Will Do</option>
+						<option>Want</option>
 					</Form.Select>
-				</Form.Group> */}
+				</Form.Group>
 			</Row>
 			<Button variant="primary" type="submit">
 				Submit
