@@ -12,6 +12,7 @@ const AddEvent = (props) => {
 		title: "",
 		location: "",
 		eventtime: "",
+		status: "",
 	});
 
 	const handleTitleChange = (e) => {
@@ -42,6 +43,13 @@ const AddEvent = (props) => {
 		let newLocation = e.target.value;
 		setEvent((event) => ({ ...event, location: newLocation }));
 	};
+
+	const handleStatusChange = (e) => {
+		e.preventDefault();
+		let newStatus = e.target.value;
+		setEvent((event) => ({ ...event, status: newStatus }));
+	};
+	console.log(event.status);
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setEvent(event);
@@ -50,6 +58,7 @@ const AddEvent = (props) => {
 		props.postRequest(event);
 		// setEvent("");
 	};
+
 	return (
 		<Form onSubmit={handleSubmit}>
 			<Row className="mb-3">
@@ -118,12 +127,13 @@ const AddEvent = (props) => {
 
 				<Form.Group as={Col} controlId="formGridState">
 					<Form.Label>Status</Form.Label>
-					<Form.Select defaultValue="Choose...">
+
+					<select value={event.status} onChange={handleStatusChange} required>
 						<option>Choose...</option>
 						<option>Interested</option>
 						<option>Will Do</option>
 						<option>Want</option>
-					</Form.Select>
+					</select>
 				</Form.Group>
 			</Row>
 			<Button variant="primary" type="submit">

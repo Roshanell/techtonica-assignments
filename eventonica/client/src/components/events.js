@@ -53,10 +53,6 @@ const Events = () => {
 			});
 	};
 
-	const deleteRequest = () => {
-		console.log(`deleted from parent`);
-	};
-
 	return (
 		<div>
 			<CardGroup className="Events">
@@ -68,6 +64,7 @@ const Events = () => {
 						time={event.eventtime}
 						deleteFromDB={deleteFromDB}
 						eventId={event.id}
+						status={event.status}
 					/>
 					//  <DeleteEvent />
 				))}
