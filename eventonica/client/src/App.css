@@ -1,15 +1,16 @@
 .App {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  margin-top: 50px;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	margin-top: 0px;
+	margin: 1rem;
 }
 
 .Events {
-  box-shadow: 1px, gray;
+	box-shadow: 1px, gray;
 }
 
 h1 {
-  color: #00556e;
-  margin-bottom: 50px !important;
+	color: #00556e;
+	margin-bottom: 50px !important;
 }

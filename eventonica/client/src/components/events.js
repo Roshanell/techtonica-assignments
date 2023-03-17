@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import EventCard from "./event";
+import EventCard from "./EventCard";
 import CardGroup from "react-bootstrap/CardGroup";
 import AddEvent from "./AddEvent";
-import DeleteEvent from "./DeleteEvent";
 
 const Events = () => {
 	const [events, setEvents] = useState([]);
@@ -14,12 +13,6 @@ const Events = () => {
 				console.log("Events fetched...", events);
 			});
 	}, []);
-	// function deleteFromDB(eventId) {
-	// 	// will modify events arr
-	// 	// user clicks the delete button
-	// 	console.log(eventId);
-
-	// }
 
 	const deleteFromDB = async (eventId) => {
 		console.log(eventId);
@@ -29,7 +22,7 @@ const Events = () => {
 
 				{ method: "DELETE" }
 			);
-			const updatedEvents = events.filter((event) => event.id != eventId);
+			const updatedEvents = events.filter((event) => event.id !== eventId);
 			setEvents(updatedEvents);
 		} catch (err) {
 			console.log(err.message);
@@ -53,22 +46,54 @@ const Events = () => {
 			});
 	};
 
+	// // create a array full of events statuses
+	let eventStatuses = ["interested", "going", "went"];
+	// // use group by toseperate each status into a group
+
+	// const groupByCategory = eventStatuses.groupBy((event) => {
+	// 	return event.status;
+	// });
+	// // console.log(groupByCategory);
+
+	// // not showing for some reason
+	// console.log(groupByCategory);
+
 	return (
-		<div>
-			<CardGroup className="Events">
-				{events.map((event) => (
-					<EventCard
-						key={event.id}
-						title={event.title}
-						location={event.location}
-						time={event.eventtime}
-						deleteFromDB={deleteFromDB}
-						eventId={event.id}
-						status={event.status}
-					/>
-					//  <DeleteEvent />
-				))}
-			</CardGroup>
+		<div className="grid grid-cols-3 gap-14">
+			{eventStatuses.map((status) => (
+				<CardGroup className="Events">
+					{events.map(
+						(event) => {
+							if (event.status === status) {
+								return (
+									<EventCard
+										key={event.id}
+										title={event.title}
+										location={event.location}
+										time={event.eventtime}
+										deleteFromDB={deleteFromDB}
+										eventId={event.id}
+										status={event.status}
+									/>
+								);
+							}
+							// event.status === "interested" && <div>{event.status}</div>;
+							// event.status === status && (
+							// );
+						}
+						// <EventCard
+						// 	key={event.id}
+						// 	title={event.title}
+						// 	location={event.location}
+						// 	time={event.eventtime}
+						// 	deleteFromDB={deleteFromDB}
+						// 	eventId={event.id}
+						// 	status={event.status}
+						// />
+						//  <DeleteEvent />
+					)}
+				</CardGroup>
+			))}
 
 			{/* getting this data from post req to add event comp - parent to child */}
 			<AddEvent postRequest={postRequest} />

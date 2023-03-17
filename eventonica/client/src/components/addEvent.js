@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 
 //     {id: 1, title: 'Women in Tech Techtonica Panel', location: 'Overland Park Convention Center'},
 // props from the parent
-const AddEvent = (props) => {
+const AddEvent = (props, { handleModalClick }) => {
 	// create a state for the new event that holds an empty object
 	const [event, setEvent] = useState({
 		title: "",
@@ -130,9 +130,9 @@ const AddEvent = (props) => {
 
 					<select value={event.status} onChange={handleStatusChange} required>
 						<option>Choose...</option>
+						<option>Went</option>
+						<option>Going</option>
 						<option>Interested</option>
-						<option>Will Do</option>
-						<option>Want</option>
 					</select>
 				</Form.Group>
 			</Row>

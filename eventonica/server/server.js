@@ -30,56 +30,58 @@ app.get("/api/events", async (req, res) => {
 		console.log(error);
 		return res.status(400).json({ error });
 	}
-
-	app.post("/api/events", async (req, res) => {
-		// todo at the end save this event to db
-		console.log("from the server, post req", req.body);
-		try {
-			const newEvent = {
-				title: req.body.title,
-				location: req.body.location,
-				eventtime: req.body.eventtime,
-			};
-			const result = await db.query(
-				"INSERT INTO events(title, location, eventtime) VALUES ($1, $2, $3) RETURNING *",
-				[newEvent.title, newEvent.location, newEvent.eventtime]
-			);
-			let response = result.rows[0];
-			console.log(response);
-			res.json(response);
-		} catch (e) {
-			console.log(error);
-			return res.status(400).json({ error });
-		}
-	});
-	app.delete("/api/events/:eventId", async (req, res) => {
-		try {
-			const result = await db.query(
-				`DELETE FROM events WHERE id=${req.params.eventId}`
-			);
-			if (result.rowCount === 0) {
-				res
-					.status(404)
-					.json({ success: false, message: `${req.params.eventId} not found` });
-			}
-			res.send({ sucesss: true, message: `${req.params.eventId} deleted` });
-		} catch (err) {
-			console.log(err.message);
-		}
-	});
-
-	//hardcode the events response for testing reasons. This call has one more event that the real DB
-	// const events = [
-
-	//     {id: 1, title: 'Women in Tech Techtonica Panel', location: 'Overland Park Convention Center'},
-	//     {id: 2, title: 'Japanese Cultural Education', location: 'Seattle Convention Center'},
-	//     {id: 3, title: "Haven 90's Party Night Club", location: 'Hilton Hotel Kansas City'},
-	//     {id: 4, title: 'Comedy Night at the Station', location: 'SF Hilton Hotel'},
-	//     {id: 5, title: 'A Decadent Arts Experience', location: 'West Ridge Mall'},
-	//     {id: 6, title: 'Techtonica Classroom Course', location: 'Techtonica HQ'}
-	//   ];
-	// res.json(events);
 });
+
+app.post("/api/events", async (req, res) => {
+	// todo at the end save this event to db
+	console.log("from the server, post req", req.body);
+	try {
+		// console.log(req.body.status);
+		const newEvent = {
+			title: req.body.title,
+			location: req.body.location,
+			eventtime: req.body.eventtime,
+			status: req.body.status,
+		};
+		const result = await db.query(
+			"INSERT INTO events(title, location, eventtime, status) VALUES ($1, $2, $3, $4) RETURNING *",
+			[newEvent.title, newEvent.location, newEvent.eventtime, newEvent.status]
+		);
+		let response = result.rows[0];
+		console.log(response);
+		res.json(response);
+	} catch (error) {
+		console.log(error);
+		return res.status(400).json({ error });
+	}
+});
+app.delete("/api/events/:eventId", async (req, res) => {
+	try {
+		const result = await db.query(
+			`DELETE FROM events WHERE id=${req.params.eventId}`
+		);
+		if (result.rowCount === 0) {
+			res
+				.status(404)
+				.json({ success: false, message: `${req.params.eventId} not found` });
+		}
+		res.send({ sucesss: true, message: `${req.params.eventId} deleted` });
+	} catch (error) {
+		console.log(error.message);
+	}
+});
+
+//hardcode the events response for testing reasons. This call has one more event that the real DB
+// const events = [
+
+//     {id: 1, title: 'Women in Tech Techtonica Panel', location: 'Overland Park Convention Center'},
+//     {id: 2, title: 'Japanese Cultural Education', location: 'Seattle Convention Center'},
+//     {id: 3, title: "Haven 90's Party Night Club", location: 'Hilton Hotel Kansas City'},
+//     {id: 4, title: 'Comedy Night at the Station', location: 'SF Hilton Hotel'},
+//     {id: 5, title: 'A Decadent Arts Experience', location: 'West Ridge Mall'},
+//     {id: 6, title: 'Techtonica Classroom Course', location: 'Techtonica HQ'}
+//   ];
+// res.json(events);
 
 app.listen(PORT, () =>
 	console.log(`Hola! Server running on Port http://localhost:${PORT}`)
