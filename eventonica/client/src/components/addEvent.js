@@ -13,6 +13,7 @@ const AddEvent = (props, { handleModalClick }) => {
 		location: "",
 		eventtime: "",
 		status: "",
+		description: "",
 	});
 
 	const handleTitleChange = (e) => {
@@ -49,7 +50,12 @@ const AddEvent = (props, { handleModalClick }) => {
 		let newStatus = e.target.value;
 		setEvent((event) => ({ ...event, status: newStatus }));
 	};
-	console.log(event.status);
+	const handleDescriptionChange = (e) => {
+		e.preventDefault();
+		let newDescription = e.target.value;
+		setEvent((event) => ({ ...event, description: newDescription }));
+		console.log(event.description);
+	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setEvent(event);
@@ -97,7 +103,7 @@ const AddEvent = (props, { handleModalClick }) => {
 				/>
 			</Form.Group> */}
 
-			{/* <Form.Group className="mb-3" controlId="formGridDescription">
+			<Form.Group as={Col} className="mb-3" controlId="formGridDescription">
 				<Form.Label>Description</Form.Label>
 				<Form.Control
 					placeholder="Enter a brief description"
@@ -106,7 +112,7 @@ const AddEvent = (props, { handleModalClick }) => {
 					value={event.description}
 					onChange={handleDescriptionChange}
 				/>
-			</Form.Group> */}
+			</Form.Group>
 
 			<Row className="mb-3">
 				<Form.Group as={Col} controlId="formGridLocation">

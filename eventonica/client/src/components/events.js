@@ -34,7 +34,10 @@ const Events = () => {
 		//console.log("From the parent", newEvent);
 		return fetch("http://localhost:8080/api/events", {
 			method: "POST",
-			headers: { "Content-Type": "application/json" },
+			headers: {
+				Accept: "application/json",
+				"Content-Type": "application/json",
+			},
 			body: JSON.stringify(newEvent),
 		})
 			.then((response) => {
@@ -52,11 +55,14 @@ const Events = () => {
 	return (
 		<div className="grid grid-cols-3 gap-14">
 			{eventStatuses.map((status) => (
-				<CardGroup className="Events flex flex-col">
+				// mapping over the event status arr which contains diff statuses
+				// card group will be identified by the it's status.
+				<CardGroup key={status} className="Events flex flex-col">
 					{events.map((event) => {
-						if (event.status === status) {
+						if (event.status.toLowerCase() === status) {
 							return (
 								<EventCard
+									// each event card will be identified by its event id taken from the db
 									key={event.id}
 									title={event.title}
 									location={event.location}
@@ -64,6 +70,7 @@ const Events = () => {
 									deleteFromDB={deleteFromDB}
 									eventId={event.id}
 									status={event.status}
+									description={event.description}
 								/>
 							);
 						}

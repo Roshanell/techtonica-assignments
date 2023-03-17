@@ -33,7 +33,7 @@ const SideBar = () => {
 			<div className="drawer">
 				<input id="my-drawer" type="checkbox" className="drawer-toggle" />
 				<div className="drawer-content">
-					<div className="grid grid-cols-3 gap-14">
+					<div className="grid grid-cols-3 gap-14 status-column">
 						<div>Interested</div>
 						<div>Going</div>
 						<div>Went</div>

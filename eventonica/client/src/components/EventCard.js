@@ -13,15 +13,16 @@ const EventCard = (props) => {
 	const isNotFavorite = <i className="fa-regular fa-heart"></i>;
 
 	return (
-		<div className="card w-96 bg-base-100 shadow-xl">
+		<div className="card w-96 bg-base-100 shadow-xl event-card">
 			<div className="card-body">
-				<h2 className="card-title">{props.title} </h2>
-				<div style={{ backgroundColor: "green" }}>
+				<h2 className="card-title">
+					{props.title}{" "}
 					<span onClick={handleFavoriteClick}>
 						{" "}
 						{isFavorite ? favorite : isNotFavorite}
-					</span>
-				</div>
+					</span>{" "}
+				</h2>
+
 				<p>Where: {props.location}</p>
 				<p>
 					When:{" "}
@@ -32,6 +33,7 @@ const EventCard = (props) => {
 					)}
 				</p>
 				<div>Status: {props.status}</div>
+				<div>Description: {props.description}</div>
 				<div className="card-actions justify-end">
 					<DeleteEvent
 						deleteFromDB={props.deleteFromDB}
