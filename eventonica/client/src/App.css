@@ -14,3 +14,10 @@ h1 {
 	color: #00556e;
 	margin-bottom: 50px !important;
 }
+
+.card-group {
+	flex-direction: column !important;
+	margin-top: 5%;
+	height: fit-content;
+}
+

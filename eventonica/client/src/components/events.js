@@ -48,50 +48,26 @@ const Events = () => {
 
 	// // create a array full of events statuses
 	let eventStatuses = ["interested", "going", "went"];
-	// // use group by toseperate each status into a group
-
-	// const groupByCategory = eventStatuses.groupBy((event) => {
-	// 	return event.status;
-	// });
-	// // console.log(groupByCategory);
-
-	// // not showing for some reason
-	// console.log(groupByCategory);
 
 	return (
 		<div className="grid grid-cols-3 gap-14">
 			{eventStatuses.map((status) => (
-				<CardGroup className="Events">
-					{events.map(
-						(event) => {
-							if (event.status === status) {
-								return (
-									<EventCard
-										key={event.id}
-										title={event.title}
-										location={event.location}
-										time={event.eventtime}
-										deleteFromDB={deleteFromDB}
-										eventId={event.id}
-										status={event.status}
-									/>
-								);
-							}
-							// event.status === "interested" && <div>{event.status}</div>;
-							// event.status === status && (
-							// );
+				<CardGroup className="Events flex flex-col">
+					{events.map((event) => {
+						if (event.status === status) {
+							return (
+								<EventCard
+									key={event.id}
+									title={event.title}
+									location={event.location}
+									time={event.eventtime}
+									deleteFromDB={deleteFromDB}
+									eventId={event.id}
+									status={event.status}
+								/>
+							);
 						}
-						// <EventCard
-						// 	key={event.id}
-						// 	title={event.title}
-						// 	location={event.location}
-						// 	time={event.eventtime}
-						// 	deleteFromDB={deleteFromDB}
-						// 	eventId={event.id}
-						// 	status={event.status}
-						// />
-						//  <DeleteEvent />
-					)}
+					})}
 				</CardGroup>
 			))}
 
