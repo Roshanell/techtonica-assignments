@@ -1,6 +1,9 @@
 import Events from "./events";
+import { useState } from "react";
 
 const SideBar = () => {
+	const [events, setEvents] = useState([]);
+
 	return (
 		<div className="w-full">
 			<div className="navbar ">
@@ -38,7 +41,7 @@ const SideBar = () => {
 						<div>Going</div>
 						<div>Went</div>
 					</div>
-					<Events />
+					<Events events={events} setEvents={setEvents} />
 				</div>
 				<div className="drawer-side">
 					<label htmlFor="my-drawer" className="drawer-overlay"></label>

@@ -3,8 +3,11 @@ import EventCard from "./EventCard";
 import CardGroup from "react-bootstrap/CardGroup";
 import AddEvent from "./AddEvent";
 
-const Events = () => {
-	const [events, setEvents] = useState([]);
+const Events = ({ events, setEvents }) => {
+	// // create a array full of events statuses
+	let eventStatuses = ["interested", "going", "went"];
+	// state for filter method
+
 	useEffect(() => {
 		fetch("http://localhost:8080/api/events")
 			.then((response) => response.json())
@@ -28,8 +31,6 @@ const Events = () => {
 			console.log(err.message);
 		}
 	};
-	// data that will be passed to the child
-	// look into heirarchy for data passing
 	const postRequest = (newEvent) => {
 		//console.log("From the parent", newEvent);
 		return fetch("http://localhost:8080/api/events", {
@@ -48,9 +49,6 @@ const Events = () => {
 				setEvents((events) => [...events, data]);
 			});
 	};
-
-	// // create a array full of events statuses
-	let eventStatuses = ["interested", "going", "went"];
 
 	return (
 		<div className="grid grid-cols-3 gap-14">
