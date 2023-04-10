@@ -3,7 +3,18 @@ import { useState } from "react";
 
 const SideBar = () => {
 	const [events, setEvents] = useState([]);
+	// setting the default value of filtered lists to be events
+	const [filteredEvents, setFilteredEvents] = useState(events);
+	// function to handle on change
+	const filterBySearch = (e) => {
+		const query = e.target.value;
+		let updatedList = [...events];
+		updatedList = updatedList.filter((item) =>
+			item.toLowerCase().indexOf(query.toLowerCase())
+		);
 
+		setFilteredEvents(updatedList);
+	};
 	return (
 		<div className="w-full">
 			<div className="navbar ">
@@ -18,6 +29,8 @@ const SideBar = () => {
 							type="text"
 							placeholder="Search"
 							className="input input-bordered"
+							//tracks changes in the input
+							onChange={filterBySearch}
 						/>
 					</div>
 					<div className="dropdown dropdown-end">
@@ -41,7 +54,12 @@ const SideBar = () => {
 						<div>Going</div>
 						<div>Went</div>
 					</div>
-					<Events events={events} setEvents={setEvents} />
+					<Events
+						events={events}
+						setEvents={setEvents}
+						filteredEvents={filteredEvents}
+						setFilteredEvents={setFilteredEvents}
+					/>
 				</div>
 				<div className="drawer-side">
 					<label htmlFor="my-drawer" className="drawer-overlay"></label>

@@ -3,7 +3,7 @@ import EventCard from "./EventCard";
 import CardGroup from "react-bootstrap/CardGroup";
 import AddEvent from "./AddEvent";
 
-const Events = ({ events, setEvents }) => {
+const Events = ({ events, setEvents, filteredEvents, setFilteredEvents }) => {
 	// // create a array full of events statuses
 	let eventStatuses = ["interested", "going", "went"];
 	// state for filter method
@@ -56,8 +56,25 @@ const Events = ({ events, setEvents }) => {
 				// mapping over the event status arr which contains diff statuses
 				// card group will be identified by the it's status.
 				<CardGroup key={status} className="Events flex flex-col">
-					{events.map((event) => {
+					{/* {events.map((event) => {
 						if (event.status.toLowerCase() === status) {
+							return (
+								<EventCard
+									// each event card will be identified by its event id taken from the db
+									key={event.id}
+									title={event.title}
+									location={event.location}
+									time={event.eventtime}
+									deleteFromDB={deleteFromDB}
+									eventId={event.id}
+									status={event.status}
+									description={event.description}
+								/>
+							);
+						}
+					})} */}
+					{filteredEvents.map((event, index) => {
+						if (filteredEvents.status.toLowerCase() === status) {
 							return (
 								<EventCard
 									// each event card will be identified by its event id taken from the db
