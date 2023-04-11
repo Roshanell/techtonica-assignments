@@ -74,7 +74,7 @@ const Events = ({ events, setEvents, filteredEvents, setFilteredEvents }) => {
 						}
 					})} */}
 					{filteredEvents.map((event, index) => {
-						if (filteredEvents.status.toLowerCase() === status) {
+						if (event.status.toLowerCase() === status) {
 							return (
 								<EventCard
 									// each event card will be identified by its event id taken from the db

@@ -1,20 +1,30 @@
 import Events from "./events";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const SideBar = () => {
 	const [events, setEvents] = useState([]);
-	// setting the default value of filtered lists to be events
-	const [filteredEvents, setFilteredEvents] = useState(events);
+	// set an input value to this state; when you have an input alwways set value to state
+	const [globalSearchText, setGlobalSearchText] = useState("");
+	// setting the default value of filtered lists to be a default array
+	const [filteredEvents, setFilteredEvents] = useState([]);
 	// function to handle on change
-	const filterBySearch = (e) => {
-		const query = e.target.value;
-		let updatedList = [...events];
-		updatedList = updatedList.filter((item) =>
-			item.toLowerCase().indexOf(query.toLowerCase())
+	const filterBySearch = () => {
+		// create a new variable that contain the array of events. we filter the events
+		let newFilteredEvents = [...events].filter((event) =>
+			// we grab the object of values
+			Object.values(event)
+				// joined the strings together to create a string
+				.join("")
+				// turned the string to lowercase
+				.toLowerCase()
+				// checked to see if it includes globalssearchg
+				.includes(globalSearchText.toLowerCase())
 		);
 
-		setFilteredEvents(updatedList);
+		setFilteredEvents(newFilteredEvents);
 	};
+
+	useEffect(() => filterBySearch(), [events, globalSearchText]);
 	return (
 		<div className="w-full">
 			<div className="navbar ">
@@ -30,7 +40,7 @@ const SideBar = () => {
 							placeholder="Search"
 							className="input input-bordered"
 							//tracks changes in the input
-							onChange={filterBySearch}
+							onChange={(e) => setGlobalSearchText(e.target.value)}
 						/>
 					</div>
 					<div className="dropdown dropdown-end">
